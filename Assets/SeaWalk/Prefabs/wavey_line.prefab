@@ -42,8 +42,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WavePeriod: -10
   WaveAmplitude: 0.1
+  WaveAmplitudeStartMultiplier: 1
+  WaveAmplitudeEndMultiplier: 1
   WaveWavelength: 0.5
-  WaveSegmentCount: 233
+  WaveSegmentCount: 100
   CurrentAnimationFraction: 0
   DebugEnabled: 0
 --- !u!120 &12038502
@@ -53,7 +55,7 @@ LineRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161700}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: d29e35be3e816c44194bcc71812e36b4, type: 2}
