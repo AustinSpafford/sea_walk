@@ -6,6 +6,8 @@ public class WaveyLineAnimator : MonoBehaviour
 {
 	public float WavePeriod = 3.0f;
 	public float WaveAmplitude = 0.5f;
+	public float WaveAmplitudeStartMultiplier = 1.0f;
+	public float WaveAmplitudeEndMultiplier = 1.0f;
 	public float WaveWavelength = 0.25f;
 
 	[Range(1, 1000)]
@@ -56,10 +58,17 @@ public class WaveyLineAnimator : MonoBehaviour
 					(positionFraction / WaveWavelength) +
 					CurrentAnimationFraction);
 
+				float waveAmplitudeAtPosition = (
+					WaveAmplitude *
+					Mathf.Lerp(
+						WaveAmplitudeStartMultiplier, 
+						WaveAmplitudeEndMultiplier, 
+						positionFraction));
+
 				scratchLinePositions[positionIndex] = 
 					new Vector3(
 						0.0f,
-						(WaveAmplitude * Mathf.Sin((2 * Mathf.PI) * waveSampleFraction)),
+						(waveAmplitudeAtPosition * Mathf.Sin((2 * Mathf.PI) * waveSampleFraction)),
 						positionFraction);
 			}
 
