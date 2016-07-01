@@ -48,7 +48,7 @@ public class WaveCircle : MonoBehaviour
 					WaveyLineAnimator waveAnimator = 
 						waveInstance.GetComponent<WaveyLineAnimator>();
 
-					waveAnimator.CurrentAnimationFraction = waveSeriesFraction;
+					waveAnimator.CurrentAnimationFraction = (waveSeriesFraction / 2.0f);
 				}
 
 				waveInstances[waveIndex] = waveInstance;
